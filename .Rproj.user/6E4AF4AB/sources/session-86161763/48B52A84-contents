@@ -85,3 +85,14 @@ fit_ar2 <- EnvCpt:::cpt.reg(
 cpts(fit_ar2)
 plot(fit_ar2, main = "AR2 changepoint fit (with additional data, from 118 we icnreased to 221)")
 class(fit_ar2)
+
+
+# now, collecting all our findings together:
+
+par(mfrow = c(3, 1))
+
+plot(ts_y, main = "Simulated series with changing AR structure (increased data sample from 118 to 221)")
+abline(v = n1, lty = 2)
+
+plot(fit_ar1, main = "AR1 changepoint fit")
+plot(fit_ar2, main = "AR2 changepoint fit")

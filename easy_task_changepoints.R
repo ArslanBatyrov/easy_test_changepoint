@@ -38,7 +38,7 @@ for (t in (n1 + 2):n) {
 # Time to convert a simulated vector into time-series object -> Then plot it with the break point
 ts_y <-ts(y)
 
-plot(ts_y, main = "Simulated series with changing AR structure (change occurs at point 118)")
+plot(ts_y, main = "Simulated series with changing AR structure (change occurs at point 221)")
 abline(v = n1, lty = 2)
 
 
@@ -63,7 +63,7 @@ fit_ar1 <- EnvCpt:::cpt.reg(
 cpts(fit_ar1)
 plot(fit_ar1, main = "AR1 changepoint (red line is a fitted value)")
 
-# as we see, our model estimated the breaking pint at 119, it is good as we know that in reality it was 118!
+# as we see, our model estimated the breaking pint at 216, it is good as we know that in reality it was 221!
 
 ## Now, I will work with AR2 where the current value depends on 2 previous values:
 
@@ -83,5 +83,5 @@ fit_ar2 <- EnvCpt:::cpt.reg(
 )
 # Extracting the breaking point again:
 cpts(fit_ar2)
-plot(fit_ar2, main = "AR2 changepoint fit")
+plot(fit_ar2, main = "AR2 changepoint fit (with additional data, from 118 we icnreased to 221)")
 class(fit_ar2)
