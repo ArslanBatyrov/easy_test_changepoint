@@ -15,4 +15,9 @@ e <- rnorm(n)
 
 y <- numeric(n)
 
-# i will be back after my Macro 4 class
+#generating the first regime. Current value depends on the previous yet not strongly
+# (only 0.2 of the previous value carries into the next one)
+
+for (t in 2:in1) {
+  y[t] <- 0.2 * y[t-1]+e[t]
+}
