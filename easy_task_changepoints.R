@@ -18,6 +18,11 @@ y <- numeric(n)
 #generating the first regime. Current value depends on the previous yet not strongly
 # (only 0.2 of the previous value carries into the next one)
 
-for (t in 2:in1) {
+for (t in 2:n1) {
   y[t] <- 0.2 * y[t-1]+e[t]
 }
+
+# Now, I will create the first point after the break (n1)
+# meaning a second AR with stronger dependence post n1.
+# This part is relatively simple
+y[n1 + 1] <- 0.85 * y[n1] + e[n1 + 1]
