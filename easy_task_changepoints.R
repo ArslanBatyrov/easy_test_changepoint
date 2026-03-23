@@ -40,3 +40,28 @@ ts_y <-ts(y)
 
 plot(ts_y, main = "Simulated series with changing AR structure (change occurs at point 118)")
 abline(v = n1, lty = 2)
+
+
+
+# Next I am rewriting the data row in a regression form to run the algo:
+
+x_ar1 <- cbind(
+  ts_y[-1], # I start from -1 as for the AR1 each value must have the previous value. So, we can't start with the first value as it does not have anything that comes before it.
+  rep(1, length(ts_y) - 1),
+  ts_y[-length(ts_y)] # done for the lagged values
+)
+
+# Running a EnvCpt's internal regression change point function on previously AR1 formatted data
+fit_ar1 <- EnvCpt:::cpt.reg(
+  x_ar1,
+  method = "PELT",
+  minseglen = 5
+)
+
+
+# Estimating the breaking point
+cpts(fit_ar1)
+plot(fit_ar1, main = "AR1 changepoint (red line is a fitted value)")
+
+
+# as we see, our model estimated the breaking pint at 119, it is good as we know that in reality it was 118!
