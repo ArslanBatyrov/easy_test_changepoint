@@ -1,5 +1,5 @@
 # easy_test_changepoint
-Here, I will make an attempt to correctly complete an easy test for the GSoC project (generalised changepoints). GSoC project of Ms Rebecca and  Mr Colin
+Here, I will make an attempt to correctly complete an easy test for the GSoC project (generalised changepoints). GSoC project.
 
 So,the initial task given in the first (not the new second project), but first was:
 Easy: Load the changepoint and EnvCpt packages, 
