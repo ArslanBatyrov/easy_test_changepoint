@@ -1,4 +1,4 @@
-# easy_test_changepoint
+# Easy Test Results:
 Here, I will make an attempt to correctly complete an easy test for the GSoC project (generalised changepoints). GSoC project.
 
 So,the initial task given in the first (not the new second project), but first was:
@@ -35,3 +35,4 @@ Consequnetly, next graphs will have a larger estimated data (AR1 estimated 215, 
 
 
 
+# Medium Test Results:
